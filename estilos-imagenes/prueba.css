@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,100;1,300;1,900&display=swap');
+@import url(reset.css);
+
+:root{
+    --color-title: rgb(0, 0, 0);
+    --color-textos:rgb(22, 22, 22);
+
+}
+
+body{
+    background-color: rgb(255, 255, 255);
+    color: var(--color-textos);
+    
+}
+
+.seccion1{
+    padding:0 5rem 3rem 5rem;
+    font-family: Roboto, sans-serif;
+
+}
+
+.container-grid{
+    z-index: 1;
+    position: relative;
+    gap: 1rem;
+    display: grid;
+    grid-auto-rows: auto;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%,20rem), 2fr));
+    grid-template-areas:
+    "nav"
+    "baner"
+    "end"
+    ;
+}
+
+
+.container-nav{
+    grid-area: nav;
+}
+nav{
+    color: rgb(83, 83, 83);
+    font-family: Roboto, sans-serif;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem;
+    color: black;
+
+}
+.information{
+    font-size: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.logo{
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bolder;
+    margin-right: 6rem;
+    color: black;
+    
+}
+.logo::after{
+    content: "Best shopping experience";
+    font-size: 16px;
+    font-weight: 200;
+}
+
+.session{
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    display: flex;
+    gap:2rem;
+    font-weight: bolder;
+
+}
+
+.container-baner{
+    grid-area: baner;
+    display: flex;
+    height: 30rem;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.seccion-banner-1{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 1rem;
+}
+.titulo{
+    width: 25rem;
+    line-height: 5.5rem;
+    font-size: 6rem;
+    align-items: flex-start;
+    display: flex;
+    font-weight: bolder;
+    color: black;
+}
+.seccion-baner-2{
+    font-size: 16px;
+    color: black;
+    padding: 2rem;
+    height: 100%;
+}
+.categorias{
+
+    display: flex;
+    gap: 3rem;
+    color: rgb(0, 0, 0);
+    font-family: roboto, "Black 900 Italic";
+    font-weight: bold;
+    flex-direction: column;
+
+}
+.final-baner{
+    width: 65%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+.final-baner > span{
+    font-size: 18px;
+}
+.container-boton{
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    vertical-align: middle;
+}
+.boton::before{
+    
+    content: url(/estilos-imagenes/flecha.svg);
+    margin-right: 1rem;
+    display:inline-block ;
+    vertical-align: middle;
+}
+.ventas-container{
+    padding: 2rem;
+    
+    gap:7rem;
+    grid-area: end;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    
+}
+.ventas-container h2{
+    font-weight: 900;
+    
+    font-size: 2rem;
+    line-height: 2rem;
+}
+.ventas-container div {
+    border: 1px solid rgba(230, 230, 230, 0.877);
+    border-radius: 20px;
+    padding: 3rem;
+    font-size: .8rem;
+    font-weight: bold;
+    -webkit-box-shadow: 0px 28px 30px -14px rgba(230,230,230,1);
+    -moz-box-shadow: 0px 28px 30px -14px rgba(230,230,230,1);
+    box-shadow: 0px 28px 30px -14px rgba(230,230,230,1);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+.galeria{
+    
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    padding: 6rem;
+}
+.galeria h2{
+    font-size: 2rem;
+    
+}
+.contenedor-grid{
+    padding: 2rem;
+    display: grid;
+    padding: 2rem;
+    margin: 1rem;
+    grid-auto-rows: auto;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%,10rem), 2fr));
+    grid-template-areas:
+    "t t"
+    "s s"
+    "f f"
+    ;
+}
+
+/*Aplicamos la propiedad object-fit cover, ajustar su tamaño y no perder la proporcion de nuestra imagen*/
+img{
+    object-fit: cover;
+    width:100%;
+    height:100%;
+}
+
+
+.navegacion{
+    margin-bottom: 2rem;
+    grid-area: t;
+    padding: 1rem;
+    height: 5rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+}
+.contendor-flechas{
+    display: flex;
+    gap: 3rem;
+}
+.slider-arow{
+    width: 20px ;
+    opacity: 0.5;
+    height: 20px;
+}
+.slider-arow:hover{
+    cursor: pointer;
+}
+.active{
+    opacity: 1;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+.contenedor-carrusel{
+    overflow: hidden;
+    grid-area: s;
+    border-radius: 36px;
+    border-radius: 20px;
+    background: linear-gradient(45deg, #f0f0f0, #cacaca);
+    box-shadow:  23px -23px 47px #aaaaaa,
+            -23px 23px 47px #ffffff;
+    max-width: 250em;
+    width: 90%;
+    height: 30rem;
+}
+.contenedor-carrusel .carrusel {
+    overflow: hidden;
+    width: 500%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row nowrap;
+    transition: all .5s ease;
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+}
+.carrusel .img{
+    width: calc(100% / 5);
+}
+
+.puntos{
+    grid-area: f;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    
+}
+.punto{
+    padding: 1rem;
+    border-radius: 50px;
+    background-color: #aaaaaa;
+
+    
+}
+.punto.activo{
+    background-color: red;
+}
+
+
+
+
+
+.botones{
+    cursor: pointer;
+    border: 1px solid rgba(235, 229, 229, 0.664);
+    background-color: rgb(153, 153, 153);
+    width: 20px;
+    height: 6px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    box-shadow: inset 1px 2px 1px #dddddd,    inset -8px -8px 16px #ffffff;
+}
+.botones:hover{
+    background-color: rgba(59, 59, 59, 0.733);
+    border: 1px solid rgba(114, 114, 114, 0.637);
+    box-shadow: none;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+
+.contenedor-grid-2{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    scroll-behavior: smooth;
+    justify-content: center;
+    align-items: center;
+
+}
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.contenedor-grid-2 label{
+    border: 1px solid red;
+    padding: 1rem;
+}
+
+.contenedor-all{
+    flex-direction: row;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 1rem;
+}
+.img-all{
+    width: 20%;
+    height: 100%;
+}
+ul.carrusel{
+    position: relative;
+    width: 100%;
+    height: 35rem;
+    
+}
+
+ul.carrusel li{
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    opacity: 0;
+    
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+ul.carrusel li  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    object-fit: cover;
+
+}
+ul.carrusel li:first-child{
+    opacity: 1;
+}
+ul.carrusel li:target{
+    opacity: 1;
+    
+}
+.splide__slide img {
+    width: 100%;
+    height: auto;
+}

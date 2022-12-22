@@ -1,0 +1,131 @@
+/* definir Custom properties*/
+
+:root{
+    --color-primario :#181818;
+    --color-secundario:#f0f0f0;
+    
+    
+    /*Tipo grafia*/
+
+    --tipografia-principa:helvetica, Arial, sans-serif;
+    --tipografia-secundaria:verdana;
+}
+
+/* Adaptacion modo oscuro*/
+
+@media (prefers-color-scheme:dark){
+    :root{
+        --color-primario:#f0f0f0;
+        --color-secudario:#181818;
+    }
+}
+
+/*Por si usa alto contraste*/
+
+@media(prefers-contrast:high){
+    :root{
+        --color-primario:black;
+        --color-secundario:white;
+    }
+}
+/*Para cuando el usuario tiene desactivadas las animaciones*/
+@media (prefers-reduced-motion: reduce){
+    *{
+        animation: none;
+        transition: none;
+    }
+}
+
+/*Reseteamo el pading y margin de todas las etiquetas*/
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+}
+
+/*Para evitar problemas con las imagenes*/
+img, picture, video, iframe,figure{
+    max-width: 100%;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center center;
+}
+/*Reseteamo enlaces que van funcionar como cajas */
+a{
+    display: block;
+}
+/*Exepto las que se encuentran en parrafos */
+p a{
+    display: inline;
+}
+/*Quitamos puntos de las li*/
+li{
+    list-style-type: none;
+}
+/*Anclas suaves*/
+html{
+    scroll-behavior: smooth;
+
+}
+/*desactivar estilos para etiquetas principasles de texto*/
+h1,h2,h3,h4,h5,h6,p,span,a,strong,blockquote, i,b,u,em{
+    font-size: 1em;
+    font-weight: inherit;
+    font-style: inherit;
+    text-decoration: none;
+    color: inherit;
+}
+/*Evitamos problemas con los pseudo elementos de quotesi*/
+blockquote:before, blockquote:after,q:before,q:after{
+    content: '';
+    content: none;
+
+}
+/*Configuramos texto cuando seleccionamos */
+
+::selection{
+    background-color: var(--color-primario);
+    color: var(--color-secudario);
+}
+/*Nivelamos problemas  de tipografias  y colocaicon de formularios*/
+
+form, input,textarea,select, button, label{
+    font-family: inherit;
+    font-size: inherit;
+    hyphens: auto;
+    background-color: transparent;
+    display: block;
+    color: inherit;
+    appearance: none;
+}
+
+/*Reseteamos estilos de las tablas*/
+table, tr, td{
+    border-collapse: collapse;
+    border-spacing:0 ;
+}
+
+/*Evitamos problemas con las imagenes svg*/
+svg{
+    width: 100%;
+    display: block;
+    fill:currentColor
+}
+
+/*Configuramos tipografias para toda la web*/
+body{
+    min-height: 100vh;
+    font-size: 100%;
+    font-family: var(--tipografi-principal);
+    color: var(--color-primario);
+    background-color: var(--color-secundario);
+    line-height: 1.4em;
+    hyphens: auto;
+    font-smooth: always;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
